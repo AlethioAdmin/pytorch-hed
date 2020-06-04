@@ -12,7 +12,7 @@ import sys
 
 ##########################################################
 
-assert(int(str('').join(torch.__version__.split('.')[0:2])) >= 13) # requires at least pytorch version 1.3.0
+# assert(int(str('').join(torch.__version__.split('.')[0:2])) >= 13) # requires at least pytorch version 1.3.0
 
 torch.set_grad_enabled(False) # make sure to not compute gradients for computational performance
 
@@ -138,8 +138,8 @@ def estimate(tenInput):
 	intWidth = tenInput.shape[2]
 	intHeight = tenInput.shape[1]
 
-	assert(intWidth == 480) # remember that there is no guarantee for correctness, comment this line out if you acknowledge this and want to continue
-	assert(intHeight == 320) # remember that there is no guarantee for correctness, comment this line out if you acknowledge this and want to continue
+	# assert(intWidth == 480) # remember that there is no guarantee for correctness, comment this line out if you acknowledge this and want to continue
+	# assert(intHeight == 320) # remember that there is no guarantee for correctness, comment this line out if you acknowledge this and want to continue
 
 	return netNetwork(tenInput.cuda().view(1, 3, intHeight, intWidth))[0, :, :, :].cpu()
 # end

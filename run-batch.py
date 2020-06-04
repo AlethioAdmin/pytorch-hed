@@ -92,7 +92,7 @@ class Network(torch.nn.Module):
 			torch.nn.Sigmoid()
 		)
 
-		self.load_state_dict({ strKey.replace('module', 'net'): tenWeight for strKey, tenWeight in torch.load(__file__.replace('run.py', 'network-' + arguments_strModel + '.pytorch')).items() })
+		self.load_state_dict({ strKey.replace('module', 'net'): tenWeight for strKey, tenWeight in torch.load(__file__.replace('run-batch.py', 'network-' + arguments_strModel + '.pytorch')).items() })
 	# end
 
 	def forward(self, tenInput):
